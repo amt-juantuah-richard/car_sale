@@ -13,7 +13,38 @@ const Footer = () => {
           All rights reserved &copy;
           </p>
         </div>
-        <div className="footer__links"></div>
+        <div className="footer__links">
+          { footerLinks.map((link) => (
+            <div key={link.title} className='footer__link'>
+              <h3 className='font-bold'>{link.title}</h3>
+              {link.links.map((go) => (
+              <Link 
+                key={go.title}
+                href={go.url}
+                className='text-gray-500'
+              >
+                {go.title}
+              </Link>
+              ))}
+            </div>)
+            )}
+        </div>
+        </div>
+        <div className="flex justify-between items-center flex-wrap mt-10 border-t border-grey-100 sm:px-16 px-6 py-10">
+          <p>All rights reserved &copy; 2024</p>
+          <div className="footer__copyrights-link">
+            <Link href="/"
+              className='texr-gray-500'
+            >
+              Privacy Policy
+            </Link>
+            <Link href="/"
+              className='texr-gray-500'
+            >
+              Terms of Use
+            </Link>
+          </div>
+        
       </div>
       
     </footer>
